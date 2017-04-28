@@ -2,10 +2,11 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import { Provider } from 'react-redux'
 import {
-  BrowserRouter as Router,
+//  BrowserRouter as Router,
   Route,
   Switch,
 } from 'react-router-dom'
+import { ConnectedRouter } from 'react-router-redux'
 import createBrowserHistory from 'history/createBrowserHistory'
 
 import Home from './components/Home'
@@ -21,7 +22,7 @@ const app = document.getElementById('app')
 
 ReactDOM.render(
   <Provider store={store}>
-    <Router history={history}>
+    <ConnectedRouter history={history}>
       <div>
         <Switch>
           <Route exact path="/" component={Home} />
@@ -34,7 +35,7 @@ ReactDOM.render(
         </Switch>
         {/* </Route> */}
       </div>
-    </Router>
+    </ConnectedRouter>
   </Provider>
   ,
   app,

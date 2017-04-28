@@ -7,5 +7,5 @@ import detail from './detail'
 export default combineReducers({
   products,
   detail,
-  routing: routerReducer,
+  router: routerReducer,
 })

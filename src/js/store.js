@@ -3,11 +3,11 @@ import thunk from 'redux-thunk'
 import promise from 'redux-promise-middleware'
 import { composeWithDevTools } from 'redux-devtools-extension'
 import logger from 'redux-logger'
+import { routerMiddleware } from 'react-router-redux'
 import reducer from './reducers'
 
 const env = process.env.NODE_ENV
-
-const middleware = [promise(), thunk]
+const middleware = [promise(), thunk, routerMiddleware(history)]
 
 if (env === 'development') {
   middleware.push(logger)

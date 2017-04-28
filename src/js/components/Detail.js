@@ -4,6 +4,7 @@ import { bindActionCreators } from 'redux'
 import { fetchDetail } from './../actions'
 import Search from './Search'
 import BreadCrumbs from './BreadCrumbs'
+import Loading from './Loading'
 
 require('./../../styles/scss/productDetail.scss')
 
@@ -44,7 +45,7 @@ class ProductDetail extends Component {
           <button type="button" className="btn">Comprar</button>
         </div>
       </div>
-    </div>) : <p>Loading.....</p>
+    </div>) : <Loading />
     return (
       <div>
         <Search />

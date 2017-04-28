@@ -4,13 +4,13 @@ import { bindActionCreators } from 'redux'
 import { Link } from 'react-router-dom'
 import Search from './Search'
 import BreadCrumbs from './BreadCrumbs'
+import Loading from './Loading'
 import { fetchProduct } from './../actions'
 
 
 require('./../../styles/scss/resultSearch.scss')
 
 function mapStateToProps(state) {
-  // console.log('state', state)
   return {
     products: state.products,
   }
@@ -50,7 +50,7 @@ class List extends Component {
           </div>
         </Link>
       </div>
-      )) : <div>Loading......</div>
+    )) : <Loading />
 
     return (
       <div>

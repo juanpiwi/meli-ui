@@ -9,23 +9,6 @@ function mapStateToProps(state) {
   }
 }
 
-/* @connect(mapStateToProps)
-class BreadCrumbs extends PureComponent {
-  render() {
-    const mappedData = (this.props.products.data.length > 0)
-    && this.props.products.data[0].categories.map(currCategory => <li>{currCategory}</li>)
-    return (
-      <div className="breadcrumb">
-        <div className="container">
-          <ul>
-            {mappedData}
-          </ul>
-        </div>
-      </div>
-    )
-  }
-}
-*/
 const BreadCrumbs = (props) => {
   const mappedData = (props.products.length > 0)
   && props.products[0].categories.map(currCategory => <li>{currCategory}</li>)

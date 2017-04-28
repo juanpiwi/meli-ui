@@ -21,7 +21,7 @@ function receiveError(json, action) {
   }
 }
 
-export function fetchProduct(param) {  
+export function fetchProduct(param) {
   const urlDto = `${Config.api.url}/meli-api/v1/items?q=${param}`
   return (dispatch) => {
     dispatch(requestData(types.PRODUCTS_REQUEST))

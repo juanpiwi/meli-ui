@@ -9,7 +9,7 @@ import createBrowserHistory from 'history/createBrowserHistory'
 
 import Home from './components/Home'
 import List from './components/List'
-import Detail from './components/ProductDetail'
+// import Detail from './components/Detail'
 
 import store from './store'
 
@@ -23,11 +23,12 @@ ReactDOM.render(
     <Router history={history}>
       <div>
         <Route exact path="/" component={Home} />
-        {/* <Route path="/item" component={List}>
-          <Route path="/item?search=:search" component={List} />
-        </Route>*/}
+        <Route path="/items" component={List}>
+          <Route path="/items?search=:search" component={List} />
+        </Route>
         {/* <Route path="/items" component={Detail}> */}
-        <Route path="/items/:id" component={Detail} />
+        {/* <Route path="/items/:id" component={Detail} /> */}
+
         {/* </Route> */}
       </div>
     </Router>

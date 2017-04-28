@@ -22,7 +22,7 @@ class Search extends Component {
           <img src="/images/Logo_ML.png" alt="" />
           <input type="text" placeholder="Nunca dejes de buscar" value={this.state.value} onChange={this.handleChange} />
           <div className="btn-search">
-            <Link to={{ pathname: '/item', search: `?search=${this.state.value}` }}>
+            <Link to={{ pathname: '/items', search: `?search=${this.state.value}` }}>
               <img src="/images/ic_Search.png" alt="" />
             </Link>
           </div>

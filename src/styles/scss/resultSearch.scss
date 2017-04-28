@@ -1,0 +1,66 @@
+.results {	
+	.container {
+		background-color: #fff;
+		padding: 0 16px;
+	}
+
+	.item {
+		border-bottom: 1px solid #eee;
+		cursor: pointer;
+		overflow: hidden;
+		padding: 16px 0;
+
+		.left {
+			float: left;
+
+			img {
+				border-radius: 4px;
+				height: 180px;
+				width: 180px;
+			}
+
+			.details {
+				display: inline-block;
+				margin-left: 16px;
+    			vertical-align: top;
+
+    			.price {
+    				font-size: 24px;
+    				margin-bottom: 32px;
+
+    				&.envio {
+    					&:after {
+    						background: url('/images/ic_shipping.png');
+    						content:'';
+    						display: inline-block;
+    						height: 18px;
+    						margin-left: 8px;
+    						position: relative;
+    						width: 18px;
+    					}
+    				}
+    			}
+
+    			p {
+    				line-height: 24px;
+    				max-width: 400px;
+    				text-transform: capitalize;
+    			}
+			}
+		}
+
+		.right {
+			float: right;
+			min-width: 150px;
+
+			p {
+				color: #666;
+				font-size: 12px;
+			}
+		}
+
+		&:after{
+			clear: both;
+		}
+	}
+}

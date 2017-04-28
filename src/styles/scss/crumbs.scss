@@ -1,0 +1,37 @@
+.breadcrumb {
+	padding: 16px 0;
+
+	ul {
+		margin: 0;
+		padding: 0;
+
+		li {
+			color: #666666;
+			display: inline-block;
+			font-size: 14px;
+			margin-left: 8px;
+
+			&:after {
+				content: '>';
+				margin-left: 8px;
+				position: relative;
+			}
+
+			&:last-child {
+				font-weight: bold;
+
+				&:after {
+					content: none;
+				}
+			}
+
+			&:first-child {
+				margin-left: 0;
+			}
+
+			&:hover {
+				cursor: pointer;
+			}
+		}
+	}
+}

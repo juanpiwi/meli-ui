@@ -32,7 +32,7 @@ export function fetchProduct(param) {
       headers: { Authorization: 'Bearer a4811fx8e88a6x11c78g' },
       responseType: 'json',
     }).then(response => dispatch(receiveData(response.data, types.PRODUCTS_SUCCESS)))
-      .catch(response => dispatch(receiveError(response.data, types.PRODUCTS_FAILURE)))
+      .catch(error => dispatch(receiveError(error.response.data, types.PRODUCTS_FAILURE)))
   }
 }
 
@@ -47,6 +47,6 @@ export function fetchDetail(param) {
       headers: { Authorization: 'Bearer a4811fx8e88a6x11c78g' },
       responseType: 'json',
     }).then(response => dispatch(receiveData(response.data, types.DETAIL_SUCCESS)))
-      .catch(response => dispatch(receiveError(response.data, types.DETAIL_FAILURE)))
+      .catch(error => dispatch(receiveError(error.response.data, types.DETAIL_FAILURE)))
   }
 }

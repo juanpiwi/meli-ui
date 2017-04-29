@@ -7,7 +7,7 @@ const dataState = {
   error: null,
 }
 
-const reducer = (state = dataState, action) => {
+const productReducer = (state = dataState, action) => {
   switch (action.type) {
     case types.PRODUCTS_REQUEST: {
       return {
@@ -35,4 +35,4 @@ const reducer = (state = dataState, action) => {
   }
 }
 
-export default reducer
+export default productReducer

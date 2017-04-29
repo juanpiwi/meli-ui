@@ -31,6 +31,7 @@ ReactDOM.render(
             </Route>*/}
           {/* <Route path="/items" component={Detail}> */}
           <Route path="/items/:id" component={Detail} />
+          <Route path="/error" render={() => <h1>Error</h1>} />
           <Route render={() => <h1>Página no encontrada</h1>} />
         </Switch>
         {/* </Route> */}

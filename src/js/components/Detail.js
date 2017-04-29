@@ -5,6 +5,7 @@ import { fetchDetail } from './../actions'
 import Search from './Search'
 import BreadCrumbs from './BreadCrumbs'
 import Loading from './Loading'
+import Error from './Error'
 
 require('./../../styles/scss/productDetail.scss')
 
@@ -46,11 +47,12 @@ class ProductDetail extends Component {
         </div>
       </div>
     </div>) : <Loading />
+    // console.log('00', (detail.error) && detail.error.response.data.message)
     return (
       <div>
         <Search />
         <BreadCrumbs />
-        {payload}
+        {(detail.error) ? <Error message={detail.error.message} /> : payload}
       </div>
     )
   }

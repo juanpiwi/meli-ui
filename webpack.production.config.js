@@ -1,9 +1,9 @@
 const webpack = require('webpack')
 const path = require('path')
-const CopyWebpackPlugin = require('copy-webpack-plugin')
+// const CopyWebpackPlugin = require('copy-webpack-plugin')
 // const SWPrecacheWebpackPlugin = require('sw-precache-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
-const Config = require('./src/config/config')
+// const Config = require('./src/config/config')
 
 const PATHS = {
   app: path.join(__dirname, 'src'),
@@ -16,9 +16,9 @@ const PATHS = {
 module.exports = {
   context: PATHS.app,
   devtool: 'cheap-module-source-map',
-  entry: path.join(PATHS.js, './client.js'),
+  entry: path.join(PATHS.js, './app.js'),
   module: {
-    loaders: [
+    rules: [
       {
         test: /\.js$/,
         enforce: 'pre',
@@ -32,18 +32,14 @@ module.exports = {
       },
       {
         test: /\.scss$/,
-        loaders: ['style-loader', 'css-loader', 'sass-loader'],
+        use: ['style-loader', 'css-loader', 'sass-loader'],
       },
-    /* {
-        test: /manifest.json$/,
-        loader: 'file-loader?name=manifest.json!web-app-manifest-loader',
-      },*/
       {
         test: /\.(woff|woff2|eot|ttf|svg)$/i,
         include: [
           path.resolve(__dirname, 'src/styles/fonts'),
         ],
-        loaders: [
+        use: [
           'file-loader?name=[path][name].[ext]',
           'image-webpack',
         ],
@@ -53,8 +49,10 @@ module.exports = {
         include: [
           path.resolve(__dirname, '/../src/images'),
         ],
-        loaders: [
-          'file-loader',
+        use: [
+          {
+            loader: 'file-loader',
+          },
           {
             loader: 'image-webpack-loader',
             query: {
@@ -79,45 +77,25 @@ module.exports = {
   },
   output: {
     path: PATHS.build,
-    // publicPath: Config.cdn,
-    filename: 'package.bundle.js',
+    filename: 'meli.[hash].bundle.js',
   },
   plugins: [
     new HtmlWebpackPlugin({
       template: 'index.template.ejs',
       inject: 'body',
     }),
-    /*new CopyWebpackPlugin([
-      {
-        from: path.join(PATHS.html, './index.html'),
-        to: 'index.html',
+    new webpack.optimize.UglifyJsPlugin({
+      compress: {
+        warnings: false,
       },
-    ]),*/
-    new webpack.optimize.UglifyJsPlugin(
-      {
-        compress: {
-          warnings: false,
-        },
-        mangle: {
-          except: ['$super', '$', 'exports', 'require'],
-        }
-      }
-    ),
+      mangle: {
+        except: ['$super', '$', 'exports', 'require'],
+      },
+    }),
     new webpack.DefinePlugin({
       'process.env': {
         NODE_ENV: JSON.stringify(process.env.NODE_ENV),
-      }
+      },
     }),
-    /*new SWPrecacheWebpackPlugin({
-      cacheId: 'webapp-car',
-      filename: 'car-service-worker.js',
-      maximumFileSizeToCacheInBytes: 4194304,
-      runtimeCaching: [
-        {
-          handler: 'cacheFirst',
-          urlPattern: /[.]mp3$/,
-        },
-      ],
-    }),*/
   ],
 }

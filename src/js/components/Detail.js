@@ -1,4 +1,5 @@
-import React, { Component, PropTypes } from 'react'
+import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import { fetchDetail } from './../actions'
@@ -50,7 +51,7 @@ class ProductDetail extends Component {
     // console.log('00', (detail.error) && detail.error.response.data.message)
     return (
       <div>
-        <Search />
+        {/* <Search /> */}
         <BreadCrumbs />
         {(detail.error) ? <Error message={detail.error.message} /> : payload}
       </div>

@@ -1,5 +1,5 @@
 {
-  "name": "mel",
+  "name": "meli-ui",
   "version": "1.0.0",
   "description": "",
   "main": "webpack.config.js",
@@ -96,6 +96,6 @@
     "test": "jest",
     "test:watch": "yarn test -- --watch"
   },
-  "author": "Juan Pablo Ferrari",
+  "author": "Juan Pablo Ferrari <ferrarijuanp@gmail.com>",
   "license": "ISC"
 }

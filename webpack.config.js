@@ -81,7 +81,7 @@ module.exports = {
   },
   output: {
     path: PATHS.build,
-    filename: 'package.min.js',
+    filename: 'meli.min.js',
   },
   plugins: [
     new webpack.DefinePlugin({

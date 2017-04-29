@@ -3,8 +3,8 @@ import React from 'react'
 require('./../../styles/scss/loading.scss')
 
 const Loading = () => (
-  <div className="container">
-    <img src="./../../images/loading.gif" title="Cargando..." alt="Cargando..." />
+  <div className="container-loading">
+    <img src="./../../images/loading.gif" alt="Cargando..." />
   </div>
 )
 

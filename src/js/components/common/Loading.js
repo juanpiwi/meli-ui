@@ -1,6 +1,6 @@
 import React from 'react'
 
-require('./../../styles/scss/loading.scss')
+require('./../../../styles/scss/loading.scss')
 
 const Loading = () => (
   <div className="container-loading">

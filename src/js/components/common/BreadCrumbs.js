@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 
-require('./../../styles/scss/crumbs.scss')
+require('./../../../styles/scss/crumbs.scss')
 
 function mapStateToProps(state) {
   return {

@@ -3,10 +3,9 @@ import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import { fetchDetail } from './../actions'
-// import Search from './Search'
-import BreadCrumbs from './BreadCrumbs'
-import Loading from './Loading'
-import Error from './Error'
+import BreadCrumbs from './common/BreadCrumbs'
+import Loading from './common/Loading'
+import Error from './common/Error'
 
 require('./../../styles/scss/productDetail.scss')
 
@@ -50,7 +49,6 @@ class ProductDetail extends Component {
     </div>) : <Loading />
     return (
       <div>
-        {/* <Search /> */}
         <BreadCrumbs />
         {(detail.error) ? <Error message={detail.error.message} /> : payload}
       </div>

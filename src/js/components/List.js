@@ -3,8 +3,8 @@ import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import { Link } from 'react-router-dom'
-import BreadCrumbs from './BreadCrumbs'
-import Loading from './Loading'
+import BreadCrumbs from './common/BreadCrumbs'
+import Loading from './common/Loading'
 import { fetchProduct } from './../actions'
 
 

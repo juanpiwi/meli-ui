@@ -89,10 +89,7 @@
   },
   "scripts": {
     "start": "webpack-dev-server",
-    "build:int": "NODE_ENV=integration webpack --progress --config webpack.production.config.js",
-    "build:stage": "NODE_ENV=stage webpack --progress --config webpack.production.config.js",
-    "build:prod": "NODE_ENV=production webpack --progress --config webpack.production.config.js",
-    "dev": "./node_modules/.bin/webpack-dev-server --content-base src --inline --hot --host 0.0.0.0 --port 5000",
+    "build": "NODE_ENV=production webpack --progress --config webpack.production.config.js",
     "test": "jest",
     "test:watch": "yarn test -- --watch"
   },

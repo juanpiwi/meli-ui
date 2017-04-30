@@ -23,12 +23,6 @@ ReactDOM.render(
         <Route path="/" component={Home} />
         <Route exact path="/items" search="?search=:search" component={List} />
         <Route exact path="/items/:id" component={Detail} />
-        {/* <Route path="/items" component={List}>
-          <Route path="/items?search=:search" component={List} />
-        </Route>
-        <Route path="/items" component={Detail}>
-          <Route path="/items/:id" component={Detail} />
-        </Route> */}
       </div>
     </ConnectedRouter>
   </Provider>

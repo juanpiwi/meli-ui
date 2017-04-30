@@ -1,6 +1,6 @@
 module.exports = {
   environment: 'production',
   api: {
-    url: 'http://api.prod.com',
+    url: 'http://localhost:3003',
   },
 }

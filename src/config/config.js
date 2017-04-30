@@ -1,6 +1,6 @@
 let env = process.env.NODE_ENV || 'production'
 
-if (env !== 'development' && env !== 'production' && env !== 'integration' && env !== 'stage') {
+if (env !== 'development' && env !== 'production') {
   env = 'production'
 }
 

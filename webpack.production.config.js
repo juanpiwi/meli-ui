@@ -3,6 +3,7 @@ const path = require('path')
 // const CopyWebpackPlugin = require('copy-webpack-plugin')
 // const SWPrecacheWebpackPlugin = require('sw-precache-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const ExtractTextPlugin = require("extract-text-webpack-plugin")
 // const Config = require('./src/config/config')
 
 const PATHS = {
@@ -30,9 +31,16 @@ module.exports = {
         exclude: /(node_modules|bower_components)/,
         loader: 'babel-loader',
       },
-      {
+      /* {
         test: /\.scss$/,
         use: ['style-loader', 'css-loader', 'sass-loader'],
+      },*/
+      {
+        test: /\.scss$/,
+        use: ExtractTextPlugin.extract({
+          fallback: 'style-loader',
+          use: ['css-loader', 'sass-loader'],
+        })
       },
       {
         test: /\.(woff|woff2|eot|ttf|svg)$/i,
@@ -80,6 +88,7 @@ module.exports = {
     filename: 'meli.[hash].bundle.js',
   },
   plugins: [
+    new ExtractTextPlugin('styles.css'),
     new HtmlWebpackPlugin({
       template: 'index.template.ejs',
       inject: 'body',

@@ -1,4 +1,4 @@
-.results {	
+.results {
 	.container {
 		background-color: #fff;
 		padding: 0 16px;
@@ -27,6 +27,11 @@
     			.price {
     				font-size: 24px;
     				margin-bottom: 32px;
+
+						img {
+							width: 16px;
+							height: 16px;
+						}
 
     				&.envio {
     					&:after {

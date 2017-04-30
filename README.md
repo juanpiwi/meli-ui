@@ -1,5 +1,5 @@
 ## Mercado Libre UI
-ReactJS con Redux
+ReactJS con Redux utilizando ES6
 
 ## Tecnologías utilizadas
 - [NodeJS](https://nodejs.org)

@@ -1,10 +1,11 @@
 import React from 'react'
+import loading from './../../../images/loading.gif'
 
 require('./../../../styles/scss/loading.scss')
 
 const Loading = () => (
   <div className="container-loading">
-    <img src="./../../images/loading.gif" alt="Cargando..." />
+    <img src={loading} alt="Cargando..." />
   </div>
 )
 

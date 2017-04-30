@@ -49,6 +49,10 @@ module.exports = {
         use: [
           {
             loader: 'file-loader',
+            query: {
+              // publicPath: './',
+              // outputPath: 'build/images',
+            }
           },
           {
             loader: 'image-webpack-loader',

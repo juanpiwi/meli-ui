@@ -54,12 +54,16 @@ module.exports = {
       },
       {
         test: /\.(gif|png|jpe?g|svg)$/i,
-        include: [
+        /* include: [
           path.resolve(__dirname, '/../src/images'),
-        ],
+        ], */
         use: [
           {
             loader: 'file-loader',
+            /* query: {
+              publicPath: '/../src/images',
+              outputPath: 'build/images',
+            }*/
           },
           {
             loader: 'image-webpack-loader',

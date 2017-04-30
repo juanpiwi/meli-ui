@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom'
 import BreadCrumbs from './common/BreadCrumbs'
 import Loading from './common/Loading'
 import { fetchProduct } from './../actions'
+import shipping from './../../images/ic_shipping.png'
 
 
 require('./../../styles/scss/resultSearch.scss')
@@ -40,7 +41,10 @@ class List extends Component {
             <div className="left">
               <img src={currProduct.items.picture} alt="" />
               <div className="details">
-                <p className="price">$ {currProduct.items.price.amount}</p>
+                <p className="price">
+                  $ {currProduct.items.price.amount}
+                  {(currProduct.items.free_shipping) && (<img src={shipping} alt="" />)}
+                </p>
                 <p>{currProduct.items.title}</p>
               </div>
             </div>

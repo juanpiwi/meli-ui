@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import { fetchDetail } from './../actions'
-import Search from './Search'
+// import Search from './Search'
 import BreadCrumbs from './BreadCrumbs'
 import Loading from './Loading'
 import Error from './Error'
@@ -48,7 +48,6 @@ class ProductDetail extends Component {
         </div>
       </div>
     </div>) : <Loading />
-    // console.log('00', (detail.error) && detail.error.response.data.message)
     return (
       <div>
         {/* <Search /> */}
@@ -61,13 +60,17 @@ class ProductDetail extends Component {
 
 ProductDetail.propTypes = {
   actions: PropTypes.objectOf(PropTypes.object),
-  match: PropTypes.objectOf(PropTypes.object),
+  match: PropTypes.shape({
+    path: PropTypes.string,
+    url: PropTypes.string,
+    isExact: PropTypes.bool,
+    params: PropTypes.object,
+  }).isRequired,
   detail: PropTypes.objectOf(PropTypes.object),
 }
 
 ProductDetail.defaultProps = {
   actions: {},
-  match: {},
   detail: {},
 }
 

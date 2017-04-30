@@ -1,12 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import { Provider } from 'react-redux'
-import {
-// BrowserRouter as Router,
-  Route,
-//  Switch,
-Redirect,
-} from 'react-router-dom'
+import { Route } from 'react-router-dom'
 import { ConnectedRouter } from 'react-router-redux'
 import createBrowserHistory from 'history/createBrowserHistory'
 

@@ -3,7 +3,6 @@ import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import { Link } from 'react-router-dom'
-import Search from './Search'
 import BreadCrumbs from './BreadCrumbs'
 import Loading from './Loading'
 import { fetchProduct } from './../actions'
@@ -27,11 +26,9 @@ function mapDispatchToProps(dispatch) {
 @connect(mapStateToProps, mapDispatchToProps)
 class List extends Component {
   componentDidMount() {
-    console.log('121212', this.props)
     const { actions, location } = this.props
     const params = new URLSearchParams(location.search)
     const param = params.get('search')
-    console.log('aaaaaaaaaaaaaaa', location.search)
     actions.fetchProduct(param)
   }
   render() {
@@ -72,13 +69,12 @@ class List extends Component {
 List.propTypes = {
   products: PropTypes.objectOf(PropTypes.object),
   actions: PropTypes.objectOf(PropTypes.object),
-  location: PropTypes.objectOf(PropTypes.object),
+  location: PropTypes.objectOf(PropTypes.string).isRequired,
 }
 
 List.defaultProps = {
   products: {},
   actions: {},
-  location: {},
 }
 
 export default List

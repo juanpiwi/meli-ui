@@ -25,34 +25,14 @@ module.exports = {
         loader: 'babel-loader',
       },
       {
-        test: /manifest.json$/,
-        loader: 'file-loader?name=manifest.json!web-app-manifest-loader',
-      },
-      {
         test: /\.scss$/,
-        use: [
-          'style-loader',
-          'css-loader',
-          'sass-loader',
-        ],
-      },
-      {
-        test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
-        loader: 'url-loader?limit=10000&mimetype=application/font-woff',
-      },
-      {
-        test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
-        loader: 'file-loader',
+        use: ['style-loader', 'css-loader', 'sass-loader'],
       },
       {
         test: /\.(gif|png|jpe?g|svg)$/i,
         use: [
           {
             loader: 'file-loader',
-            query: {
-              // publicPath: './',
-              // outputPath: 'build/images',
-            }
           },
           {
             loader: 'image-webpack-loader',

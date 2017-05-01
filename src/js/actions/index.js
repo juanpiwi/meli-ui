@@ -15,6 +15,7 @@ function receiveData(json, action) {
 }
 
 function receiveError(json, action) {
+  console.log('error', json)
   return {
     type: action,
     data: json,

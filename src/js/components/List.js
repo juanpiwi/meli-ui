@@ -58,7 +58,6 @@ class List extends Component {
 
     return (
       <div>
-        {/* <Search /> */}
         <BreadCrumbs />
         <div className="results">
           <div className="container">

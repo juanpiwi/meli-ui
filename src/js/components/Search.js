@@ -23,11 +23,11 @@ class Search extends Component {
         <div className="container">
           <img src={logo} alt="" />
           <input type="text" placeholder="Nunca dejes de buscar" value={this.state.value} onChange={this.handleChange} />
-          <div className="btn-search">
-            <Link to={{ pathname: '/items', search: `?search=${this.state.value}` }}>
+          <Link to={{ pathname: '/items', search: `?search=${this.state.value}` }}>
+            <div className="btn-search">
               <img src={imgSearch} alt="" />
-            </Link>
-          </div>
+            </div>
+          </Link>
         </div>
       </div>
     )

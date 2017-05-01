@@ -1,10 +1,8 @@
 const webpack = require('webpack')
 const path = require('path')
-// const CopyWebpackPlugin = require('copy-webpack-plugin')
-// const SWPrecacheWebpackPlugin = require('sw-precache-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
-const ExtractTextPlugin = require("extract-text-webpack-plugin")
-// const Config = require('./src/config/config')
+const ExtractTextPlugin = require('extract-text-webpack-plugin')
+
 
 const PATHS = {
   app: path.join(__dirname, 'src'),
@@ -31,10 +29,6 @@ module.exports = {
         exclude: /(node_modules|bower_components)/,
         loader: 'babel-loader',
       },
-      /* {
-        test: /\.scss$/,
-        use: ['style-loader', 'css-loader', 'sass-loader'],
-      },*/
       {
         test: /\.scss$/,
         use: ExtractTextPlugin.extract({
@@ -43,20 +37,7 @@ module.exports = {
         })
       },
       {
-        test: /\.(woff|woff2|eot|ttf|svg)$/i,
-        include: [
-          path.resolve(__dirname, 'src/styles/fonts'),
-        ],
-        use: [
-          'file-loader?name=[path][name].[ext]',
-          'image-webpack',
-        ],
-      },
-      {
         test: /\.(gif|png|jpe?g|svg)$/i,
-        /* include: [
-          path.resolve(__dirname, '/../src/images'),
-        ], */
         use: [
           {
             loader: 'file-loader',

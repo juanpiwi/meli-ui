@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import { Link } from 'react-router-dom'
+import uid from 'uid'
 import BreadCrumbs from './common/BreadCrumbs'
 import Loading from './common/Loading'
 import { fetchProduct } from './../actions'
@@ -35,8 +36,8 @@ class List extends Component {
   render() {
     const { products } = this.props
     const mappedData = (products.data.length) ? products.data.map(currProduct => (
-      <div>
-        <Link to={{ pathname: `/items/${currProduct.items.id}` }}>
+      <div key={uid()}>
+        <Link to={{ pathname: `/items/${currProduct.items.id}` }} >
           <div className="item">
             <div className="left">
               <img src={currProduct.items.picture} alt="" />

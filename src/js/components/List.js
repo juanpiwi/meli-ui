@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom'
 import uid from 'uid'
 import BreadCrumbs from './common/BreadCrumbs'
 import Loading from './common/Loading'
+import Error from './common/Error'
 import { fetchProduct } from './../actions'
 import shipping from './../../images/ic_shipping.png'
 
@@ -62,7 +63,7 @@ class List extends Component {
         <BreadCrumbs />
         <div className="results">
           <div className="container">
-            {mappedData}
+            {(products.error) ? <Error message={products.error.message} /> : mappedData}
           </div>
         </div>
       </div>

@@ -40,7 +40,7 @@ module.exports = {
         test: /\.(gif|png|jpe?g|svg)$/i,
         use: [
           {
-            loader: 'file-loader',
+            loader: 'url-loader',
             /* query: {
               publicPath: '/../src/images',
               outputPath: 'build/images',

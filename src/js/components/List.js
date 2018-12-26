@@ -7,8 +7,8 @@ import uid from 'uid'
 import BreadCrumbs from './common/BreadCrumbs'
 import Loading from './common/Loading'
 import Error from './common/Error'
-import { fetchProduct } from './../actions'
-import shipping from './../../images/ic_shipping.png'
+import { fetchProduct } from '../actions'
+import shipping from '../../images/ic_shipping.png'
 
 
 require('./../../styles/scss/resultSearch.scss')
@@ -34,17 +34,21 @@ class List extends Component {
     const param = params.get('search')
     actions.fetchProduct(param)
   }
+
   render() {
     const { products } = this.props
     const mappedData = (products.data.length) ? products.data.map(currProduct => (
       <div key={uid()}>
-        <Link to={{ pathname: `/items/${currProduct.items.id}` }} >
+        <Link to={{ pathname: `/items/${currProduct.items.id}` }}>
           <div className="item">
             <div className="left">
               <img src={currProduct.items.picture} alt="" />
               <div className="details">
                 <p className="price">
-                  $ {currProduct.items.price.amount}
+                  $
+                  { ' ' }
+                  {currProduct.items.price.amount}
+                  { ' ' }
                   {(currProduct.items.free_shipping) && (<img src={shipping} alt="" />)}
                 </p>
                 <p>{currProduct.items.title}</p>

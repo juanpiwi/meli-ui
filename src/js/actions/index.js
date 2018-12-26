@@ -1,7 +1,7 @@
 import axios from 'axios'
 
-import * as types from './../constants/ActionTypes'
-import Config from './../../config/config'
+import * as types from '../constants/ActionTypes'
+import Config from '../../config/config'
 
 function requestData(action) {
   return { type: action }

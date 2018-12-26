@@ -5,7 +5,7 @@
        "plugins": [
          "transform-remove-console",
          "transform-remove-debugger",
-         ["transform-react-remove-prop-types", {"mode": "wrap"}],
+         // ["transform-react-remove-prop-types", {"mode": "wrap", "ignoreFilenames": ["node_modules"]}],
          "transform-react-jsx-img-import",
          "transform-undefined-to-void",
          "transform-minify-booleans",

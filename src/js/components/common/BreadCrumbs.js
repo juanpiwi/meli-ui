@@ -11,8 +11,9 @@ function mapStateToProps(state) {
 }
 
 const BreadCrumbs = (props) => {
-  const mappedData = (props.products.length > 0)
-  && props.products[0].categories.map(currCategory => <li>{currCategory}</li>)
+  const { products } = props;
+  const mappedData = (products.length > 0)
+  && products[0].categories.map(currCategory => <li>{currCategory}</li>)
   return (
     <div className="breadcrumb">
       <div className="container">

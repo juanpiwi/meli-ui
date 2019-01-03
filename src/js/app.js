@@ -25,7 +25,6 @@ ReactDOM.render(
         <Route exact path="/items/:id" component={Detail} />
       </div>
     </ConnectedRouter>
-  </Provider>
-  ,
+  </Provider>,
   app,
 )

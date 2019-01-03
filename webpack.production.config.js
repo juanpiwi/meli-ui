@@ -69,7 +69,7 @@ module.exports = {
     filename: 'meli.[hash].bundle.js',
   },
   plugins: [
-    new ExtractTextPlugin('styles.css'),
+    new ExtractTextPlugin('css/[name].css'),
     new HtmlWebpackPlugin({
       template: 'index.template.ejs',
       inject: 'body',

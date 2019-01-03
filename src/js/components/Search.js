@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
-import logo from './../../images/Logo_ML.png'
-import imgSearch from './../../images/ic_Search.png'
+import logo from '../../images/Logo_ML.png'
+import imgSearch from '../../images/ic_Search.png'
 
 require('./../../styles/scss/search.scss')
 
@@ -18,12 +18,13 @@ class Search extends Component {
   }
 
   render() {
+    const { value } = this.state;
     return (
       <div className="search">
         <div className="container">
           <img src={logo} alt="" />
-          <input type="text" placeholder="Nunca dejes de buscar" value={this.state.value} onChange={this.handleChange} />
-          <Link to={{ pathname: '/items', search: `?search=${this.state.value}` }}>
+          <input type="text" placeholder="Nunca dejes de buscar" value={value} onChange={this.handleChange} />
+          <Link to={{ pathname: '/items', search: `?search=${value}` }}>
             <div className="btn-search">
               <img src={imgSearch} alt="" />
             </div>

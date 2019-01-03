@@ -6,3 +6,5 @@ build.tar.gz
 yarn.lock
 .yarnclean
 yarn-error.log
+.DS_Store
+src/.DS_Store
